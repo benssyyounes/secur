@@ -1,0 +1,4 @@
+token=NTg4NzI0NjM4Njg3ODIxODM1.XQKsGw.aPEdWeIqCBTpksEPlE0EQdaHjkQ
+owner=588685076527841290
+prefix=*
+game=for *help 
