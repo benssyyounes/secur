@@ -7,7 +7,7 @@ client.prefix = config.prefix;
 client.on("message", async message => {
     if(message.author.bot) return;
     if(message.content.startsWith(`<@!${client.user.id}>`) || message.content.startsWith(`<@${client.user.id}>`)){
-        return message.reply("Olá meu prefixo é `-`")}
+        return message.reply("Hello, my prefix é `-`")}
     if(!message.content.startsWith(config.prefix)) return;
 
 let args = message.content.split(" ").slice(1);
@@ -23,20 +23,20 @@ command = command.slice(config.prefix.length);
 })
 
 client.on("ready", () => {
-    console.log(`Bot foi iniciado com, ${client.users.size} usuários, ${client.guilds.size} servidores, ${client.channels.size} canais.`)
+    console.log(`Bot started with, ${client.users.size} users, ${client.guilds.size} servers, ${client.channels.size} channels.`)
 
-    let messages = [`Assistindo ${client.users.size} pessoas`,
-                    `Estou em ${client.guilds.size} servidores`]
+    let messages = [`Watching ${client.users.size} people`,
+                    `I'm in ${client.guilds.size} servers`]
 
     setInterval(() => {
         let randomMessages = Math.floor(Math.random() * (messages.length - 1) + 1)
         client.user.setActivity(messages[randomMessages])
     }, 10000)
 
-    //0 = Jogando
-    //1 = Transmitindo
-    //2 = Ouvindo
-    //3 = Assistindo
+    //0 = Playing
+    //1 = Transmitting
+    //2 = Listening
+    //3 = Watching
 })
 
 client.login(config.token)
